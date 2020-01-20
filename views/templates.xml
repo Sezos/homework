@@ -1,0 +1,50 @@
+<odoo>
+  <record model="ir.actions.act_window" id="jijig_action_1">
+    <field name="name">Tsagiin huvaari oruulah</field>
+    <field name="res_model">home_work.home_work</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+  
+  <record model="ir.actions.act_window" id="jijig_action_2">
+    <field name="name">Tsagiin huvaari harah</field>
+    <field name="res_model">home_work.home_work</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <menuitem id="goy_menu" name="Tsagiin Huvaari"  sequence="2" parent="project.menu_main_pm"/>
+  <menuitem id="jijig_menu1" name="Oruulah"  sequence="1" parent="goy_menu" action="jijig_action_1"/>
+  <menuitem id="jijig_menu2" name="Harah"  sequence="1" parent="goy_menu" action="jijig_action_2"/>
+  
+  <record id="jijig_menu1_form" model = "ir.ui.view">
+    <field name="name">form</field>
+    <field name="model">home_work.home_work</field>
+    <field name="arch" type="xml">
+      <form string="medeelel" version="7.0">
+        Tseej Zurag: <field name="image" widget="image"/><br />
+        Ner: <field name="Ner" string="Name"/>
+        Nas: <field name="value" string="Age"/>
+        Irsen Tsag:<field name="time" widget="timepicker" options="{'disableTextInput': false}"/><br />
+        Yvsan Tsag:<field name="teme" widget="timepicker" options="{'disableTextInput': false}"/> 
+      </form>
+    </field>
+  </record>
+  
+  <record id="jijig_menu1_tree"  model = "ir.ui.view">
+    <field name="name">tree</field>
+    <field name="model">home_work.home_work</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field string="Tseej zurag" name="image" widget="image"/>
+        <field string="Ner" name="Ner"/>
+        <field string="Nas" name="value"/>
+        <!-- <field string="Irsen Tsag" name="time"/> -->
+        <!-- <field string="Yvsan Tsag" name="teme"/>  -->
+        <field string="ajilsan honog" name="days"/> 
+        <field string="ajilsan tsag" name="hours"/> 
+        <field string="ajilsan minute" name="minutes"/> 
+        
+      </tree>
+    </field>
+  </record>
+  
+</odoo>
